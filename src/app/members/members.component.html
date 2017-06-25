@@ -1,0 +1,13 @@
+<h2>Members</h2>
+
+<div class="row">
+  <p *ngIf="!members">Loading ...</p>
+</div>
+
+<div *ngIf="members" class="row">
+  <div *ngFor="let member of members" class="three columns">
+    <img src="./assets/images/image.jpg" class="as-banner" />
+    <h3>{{member.name}}</h3>
+    <p><span *ngFor="let role of member.roles; let last = last">{{role.name}}{{last ? '' : ', '}}</span></p>
+  </div>
+</div>
