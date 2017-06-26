@@ -1,0 +1,14 @@
+<h2>Cover's Song</h2>
+
+<div>
+  <a class="button button-xlarge pure-button" [routerLink]="['/proposals']">Propose a new cover song! Click Here!</a>
+</div>
+
+<p *ngIf="!songs">Loading ...</p>
+
+<div *ngIf="songs" class="pure-g">
+  <div *ngFor="let song of songs" class="pure-u-1-5 box">
+    <h3>{{song.title}}</h3>
+    <h4>({{song.artist.name}})</h4>
+  </div>
+</div>
