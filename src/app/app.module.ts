@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MembersComponent } from './members/members.component';
 import { CoverComponent } from './cover/cover.component';
+import { ProposalsComponent } from './proposals/proposals.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { CoverComponent } from './cover/cover.component';
     AppComponent,
     MembersComponent,
     CoverComponent,
+    ProposalsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,10 @@ import { CoverComponent } from './cover/cover.component';
         path: 'cover',
         component: CoverComponent
       },
+      {
+        path: 'proposals',
+        component: ProposalsComponent
+      }
     ])
   ],
   providers: [],

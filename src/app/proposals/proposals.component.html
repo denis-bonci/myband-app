@@ -1,0 +1,38 @@
+<h2>Proposal's Songs</h2>
+
+<div *ngIf="!newArtist">
+
+  <div *ngIf="!artists">
+    Loading ...
+  </div>
+
+  <div *ngIf="artists">
+    <select *ngIf="artists" (change)="onChangeArtist($event.target.value)">"
+      <option value="0">Select exists</option>
+      <option *ngFor="let artist of artists" [value]="artist.id">{{ artist.name }}</option>
+    </select> OR
+    <button class="pure-button pure-button-primary" (click)="showNewArtist()">Add New Artist</button>
+  </div>
+
+</div>
+
+<div *ngIf="newArtist">
+  <input #artistName type="text" placeholder="Artist Name">
+  <button (click)="addArtist(artistName.value)">Add New</button>
+</div>
+
+<div *ngIf="newArtist || selectedArtist">
+  <label>Proposal Song :</label> <input #songName />
+  <button (click)="addSong(songName.value); songName.value=''">Add</button>
+</div>
+
+<hr/>
+
+<p *ngIf="!songs">Loading ...</p>
+
+<div *ngIf="songs" class="pure-g">
+  <div *ngFor="let song of songs" class="pure-u-1-5 box">
+    <h3>{{song.title}}</h3>
+    <h4>({{song.artist.name}})</h4>
+  </div>
+</div>
