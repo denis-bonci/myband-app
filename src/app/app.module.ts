@@ -9,6 +9,8 @@ import { MembersComponent } from './members/members.component';
 import { CoverComponent } from './cover/cover.component';
 import { ProposalsComponent } from './proposals/proposals.component';
 
+import 'rxjs/add/operator/map';
+
 
 @NgModule({
   declarations: [

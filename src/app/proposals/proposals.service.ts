@@ -3,15 +3,20 @@ import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Song } from '../song';
 import { Artist } from '../artist';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ProposalsService {
   private headers = new Headers({'Content-Type': 'application/json'});
+  private apiSongsUrl = environment.apiUrl + '/songs';
+  private apiArtistsUrl = environment.apiUrl + '/artists';
+  private apiProposalsUrl = environment.apiUrl + '/proposals';
+
 
   constructor(private http: Http) { }
 
   addSong(title: string, artist: number): Observable<Song> {
-    return this.http.post("http://localhost/songs",
+    return this.http.post(this.apiSongsUrl,
       JSON.stringify({
         title: title,
         artist: artist
@@ -21,7 +26,7 @@ export class ProposalsService {
   }
 
   addArtist(name: string): Observable<Artist> {
-    return this.http.post("http://localhost/artists",
+    return this.http.post(this.apiArtistsUrl,
       JSON.stringify({
         name: name
       }),
@@ -30,12 +35,12 @@ export class ProposalsService {
   }
 
   getArtists(): Observable<Artist[]> {
-    return this.http.get('http://localhost/artists')
+    return this.http.get(this.apiArtistsUrl)
     .map(response => response.json() as Artist[]);
   }
 
   getSongs(): Observable<Song[]> {
-    return this.http.get('http://localhost/proposals')
+    return this.http.get(this.apiProposalsUrl)
     .map(response => response.json() as Song[]);
   }
 }
