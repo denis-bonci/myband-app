@@ -1,10 +1,7 @@
-* {
+.center {
   text-align: center;
 }
-.box {
-    border-width: 1px 0px;
-    border-style: solid;
-    border-color: #eee;
-    background: rgb(250, 250, 250);
-    margin-bottom: 1em;
+
+strong {
+  margin: 0em 1em;
 }

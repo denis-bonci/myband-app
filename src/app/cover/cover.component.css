@@ -1,25 +1,3 @@
-* {
+.center {
   text-align: center;
-}
-.box {
-    border-width: 1px 0px;
-    border-style: solid;
-    border-color: #eee;
-    background: rgb(250, 250, 250);
-    margin-bottom: 1em;
-}
-
-.box:hover {
-    background: lightgray;
-}
-
-.button {
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: rgb(66, 184, 221); /* this is a light blue */
-}
-
-.button-xlarge {
-  font-size: 125%;
 }

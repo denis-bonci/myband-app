@@ -1,7 +1,7 @@
 <h2>Members</h2>
 
-<div class="row">
-  <p *ngIf="!members">Loading ...</p>
+<div *ngIf="!members" class="row">
+  <p>Loading ...</p>
 </div>
 
 <div *ngIf="members" class="row">
